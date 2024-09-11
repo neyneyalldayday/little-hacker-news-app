@@ -26,7 +26,9 @@ async function sortHackerNewsArticles() {
     if (titleSpans === 0 || metaData.length === 0) break;    
 
     const getTitle = async () => {
+
       const titles = [];
+
       for (let titleSpan of titleSpans) {
         const titleLink = await titleSpan.$("a");
         const title = await titleLink?.textContent();
@@ -45,6 +47,7 @@ async function sortHackerNewsArticles() {
 
        timeStamps.push(timestamp);
       }
+      
       return timeStamps;
     }
 
@@ -53,8 +56,6 @@ async function sortHackerNewsArticles() {
 
     // console.log("Titles:", titles);
     // console.log("Timestamps:", timeStamps);
-
-
       
     for (i = 0; i < Math.min(titles.length, timeStamps.length); i++) {
       if(articles.length < 100){
@@ -80,10 +81,7 @@ async function sortHackerNewsArticles() {
          console.log('no more button found');
          moreButtonExists = false;
        }
-     await page.waitForTimeout(2000);
-
-
- 
+     await page.waitForTimeout(2000); 
   }
 
 
