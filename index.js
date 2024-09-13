@@ -47,7 +47,7 @@ async function sortHackerNewsArticles() {
 
        timeStamps.push(timestamp);
       }
-      
+
       return timeStamps;
     }
 
